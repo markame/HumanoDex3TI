@@ -1,3 +1,5 @@
 <Solution>
-  <Project Path="HumanoDex3TI/HumanoDex3TI.csproj" />
+  <Project Path="HumanoDex3TI/HumanoDex3TI.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
 </Solution>
