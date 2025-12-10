@@ -25,10 +25,11 @@
                             Text="Registrar nova pessoa"
                             Clicked="Button_Clicked">
                     </Button>
-                    
+
                     <Button FontSize="30"
                             HeightRequest="150"
-                            Text="Ver pessoas">
+                            Text="Ver pessoas"
+                            Clicked="VerPessoa_Clicked">
                     </Button>
                 </StackLayout>
             </Frame>

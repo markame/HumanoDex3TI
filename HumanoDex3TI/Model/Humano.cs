@@ -2,6 +2,7 @@
 
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using System.Collections.Generic;
 
 
 namespace HumanoDex3TI.Model
@@ -37,16 +38,16 @@ namespace HumanoDex3TI.Model
             }
             
         }
-        public object selectMongo(Humano obj)
+        public async Task<List<Humano>> selectMongo(string nome)
         {
             try
             {
-                var humano = base.selectMongo(obj);
-                return humano;
+                return await base.selectMongoByName(nome);
             }
             catch (Exception ex)
             {
-                return ex.Message;
+                Console.WriteLine("Erro ao selecionar documento: " + ex.Message);
+                return null;
             }
 
         }

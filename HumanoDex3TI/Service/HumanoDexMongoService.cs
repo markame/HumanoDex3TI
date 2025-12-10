@@ -40,10 +40,11 @@ namespace HumanoDex3TI.Service
             }
         }
 
-       public  object selectMongo(Object obj)
+       public  async Task <List<Humano>> selectMongoByName(string nome)
         {
-            var humano =  _collection.FindAsync((BsonDocument)obj);
-            return humano;
+            var filter = Builders<Humano>.Filter.Eq("Nome", nome);
+             return await _collection.Find(filter).ToListAsync();
+          
         }
 
     }
