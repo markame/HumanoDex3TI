@@ -37,6 +37,15 @@ namespace HumanoDex3TI.Model
             }
             
         }
+        public List<Humano> selectMongo(Humano obj)
+        {
+            try
+            {
+                base.selectMongo(obj);
+                return new List<Humano>();
+            }
+
+        }
       
 
     }

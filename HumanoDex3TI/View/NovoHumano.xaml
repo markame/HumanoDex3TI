@@ -2,11 +2,54 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HumanoDex3TI.View.NovoHumano"
-             Title="NovoHumano">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+             Title="NovoHumano"
+             BackgroundColor="Orange">
+    <ScrollView>
+    <VerticalStackLayout Margin="20,0" Spacing="20">
+        <Frame BackgroundColor="red">
+            <Label HorizontalTextAlignment="Center"
+                   FontSize="Large"
+                   Text="Humano Dex">
+            </Label>
+        </Frame>
+        <Frame BackgroundColor="red">
+            <StackLayout Spacing="20">
+            <StackLayout>
+                <Label Text="Nome"/>
+                <Entry x:Name="nomeEntry" PlaceholderColor="White"
+                       Placeholder="Digite seu nome aqui"/>
+            </StackLayout>
+
+             <StackLayout>
+                 <Label Text="Peso"/>
+                 <Entry x:Name="pesoEntry" PlaceholderColor="White"
+                        Placeholder="Digite seu peso aqui"/>
+             </StackLayout>
+
+            <StackLayout>
+                 <Label Text="Altura"/>
+                 <Entry x:Name="alturaEntry" PlaceholderColor="White"
+                        Placeholder="Digite seu altura aqui"/>
+            </StackLayout>
+
+
+             <StackLayout>
+                 <Label Text="Gênero"/>
+                 <Entry x:Name="generoEntry" PlaceholderColor="White"
+                        Placeholder="Digite seu gênero aqui"/>
+                </StackLayout>
+                <StackLayout>
+                    <Image x:Name="fotoPatch" Source="dotnet_bot.png"></Image>
+                </StackLayout>
+                <StackLayout>
+                    <Button Text="Capturar Foto"></Button>
+                </StackLayout>
+
+                <StackLayout>
+                        <Button Clicked="SalvaClicked" Text="Registrar Humano"></Button>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
     </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
