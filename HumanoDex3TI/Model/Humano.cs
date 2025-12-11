@@ -38,20 +38,8 @@ namespace HumanoDex3TI.Model
             }
             
         }
-        public async Task<List<Humano>> selectMongo(string nome)
-        {
-            try
-            {
-                return await base.selectMongoByName(nome);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Erro ao selecionar documento: " + ex.Message);
-                return null;
-            }
-
-        }
-      
+       
+            
 
     }
 

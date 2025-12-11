@@ -22,12 +22,7 @@ namespace HumanoDex3TI
 
         private async void VerPessoa_Clicked(object sender, EventArgs e)
         {
-            Humano humano = new Humano();
-            var resultado = await humano.selectMongo("Augustinho");
-            foreach (var docs in resultado)
-            {
-                DisplayAlertAsync("Resultado", docs.ToBsonDocument().ToString(), "OK");
-            }
+
         }
     }
 }
