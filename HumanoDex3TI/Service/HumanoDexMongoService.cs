@@ -1,9 +1,11 @@
-﻿
-using HumanoDex3TI.Model;
+﻿using HumanoDex3TI.Model;
+
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Security.AccessControl;
 using System.Text;
 
 namespace HumanoDex3TI.Service
@@ -40,6 +42,33 @@ namespace HumanoDex3TI.Service
             }
         }
 
-      
+        public async Task<ObservableCollection<Humano>> getAllHumano()
+        {
+            try
+            {
+                var filter = Builders<Humano>.Filter.Empty;
+                var humano = await _collection.Find(filter).ToListAsync();
+                return new ObservableCollection<Humano>(humano);
+            }
+            catch{
+
+                return null;
+            }
+        } 
+
+        public async Task<Humano> getHumanoById(string id)
+        {
+            try
+            {
+                var filter = Builders<Humano>.Filter.Eq("_id", ObjectId.Parse(id));
+                var humano = await _collection.Find(filter).FirstOrDefaultAsync();
+                return humano;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
     }
 }

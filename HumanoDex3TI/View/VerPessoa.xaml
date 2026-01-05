@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HumanoDex3TI.View.VerPessoa"
+             Title="VerPessoa"
+             BackgroundColor="orange">
+    <ScrollView>
+        <VerticalStackLayout Margin="20,0,20,20"
+Spacing="80">
+        <Label 
+             Margin="20"
+            Text="Lista de todos "
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            FontAttributes="Bold"
+            FontSize="Large"/>
+
+            <Frame BorderColor="Red"
+                   CornerRadius="10">
+                <StackLayout>
+                    <CollectionView x:Name="humanoslist"
+                                    ItemsSource="{Binding humanos}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame BorderColor="Black"
+                                       CornerRadius="5"
+                                       Margin="5">
+                                    <StackLayout Padding="10">
+                                        <Label Text="{Binding Nome}"
+                                               FontAttributes="Bold"
+                                               FontSize="Medium"/>
+                                        <Label Text="{Binding Altura, StringFormat='Altura: {0}'}"/>
+                                        <Label Text="{Binding Genero, StringFormat='Genero: {0}'}"/>
+                                    </StackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </Frame>
+    </VerticalStackLayout>
+        
+    
+    </ScrollView>
+</ContentPage>

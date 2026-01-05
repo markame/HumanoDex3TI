@@ -3,6 +3,7 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 
 namespace HumanoDex3TI.Model
@@ -35,11 +36,16 @@ namespace HumanoDex3TI.Model
             catch (Exception ex)
             {
                 return ex.Message;
-            }
-            
+            }   
         }
-       
-            
+
+
+        public ObservableCollection<Humano> GetHumanos()
+        {
+            base.getAllHumano();
+            return new ObservableCollection<Humano>();
+        }
+
 
     }
 
