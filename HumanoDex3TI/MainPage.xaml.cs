@@ -22,7 +22,6 @@ namespace HumanoDex3TI
 
         private async void VerPessoa_Clicked(object sender, EventArgs e)
         {
-
         }
     }
 }

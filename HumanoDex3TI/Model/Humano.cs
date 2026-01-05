@@ -35,11 +35,10 @@ namespace HumanoDex3TI.Model
             catch (Exception ex)
             {
                 return ex.Message;
-            }
-            
+            }   
         }
        
-            
+
 
     }
 
