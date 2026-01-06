@@ -7,9 +7,15 @@ public partial class VerPessoa : ContentPage
 {
 	public VerPessoa()
 	{
-        Humano h = new Humano();
         InitializeComponent();
-        humanoslist.ItemsSource = h.GetHumanos();
-       
+        CarregarHumanos();
+
+
+    }
+    private async void CarregarHumanos()
+    {
+        Humano h = new Humano();
+        var lista = await h.GetHumanosAsync();
+        humanoslist.ItemsSource = lista;
     }
 }

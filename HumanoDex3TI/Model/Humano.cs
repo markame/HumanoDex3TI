@@ -40,12 +40,17 @@ namespace HumanoDex3TI.Model
         }
 
 
-        public ObservableCollection<Humano> GetHumanos()
+        public async Task<ObservableCollection<Humano>> GetHumanosAsync()
         {
-            base.getAllHumano();
-            return new ObservableCollection<Humano>();
+            try
+            {
+                return await base.getAllHumano();
+            }
+            catch
+            {
+                return new ObservableCollection<Humano>();
+            }
         }
-
 
     }
 

@@ -13,8 +13,6 @@ namespace HumanoDex3TI
         public MainPage()
         {
             InitializeComponent();
-            Humano h = new Humano();
-            humanoslist.ItemsSource = h.GetHumanos();
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
@@ -24,10 +22,7 @@ namespace HumanoDex3TI
 
         private async void VerPessoa_Clicked(object sender, EventArgs e)
         {
-            Humano h  =  new Humano();
-            CollectionView collectionView = new CollectionView();
-            humanoslist.ItemsSource = h.GetHumanos();
-      
+            await Navigation.PushAsync(new VerPessoa());
         }
     }
 }

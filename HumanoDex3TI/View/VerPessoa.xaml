@@ -2,44 +2,93 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HumanoDex3TI.View.VerPessoa"
-             Title="VerPessoa"
-             BackgroundColor="orange">
-    <ScrollView>
-        <VerticalStackLayout Margin="20,0,20,20"
-Spacing="80">
-        <Label 
-             Margin="20"
-            Text="Lista de todos "
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" 
-            FontAttributes="Bold"
-            FontSize="Large"/>
+             Title="Ver Pessoa"
+             BackgroundColor="Orange">
 
-            <Frame BorderColor="Red"
-                   CornerRadius="10">
-                <StackLayout>
-                    <CollectionView x:Name="humanoslist"
-                                    ItemsSource="{Binding humanos}">
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate>
-                                <Frame BorderColor="Black"
-                                       CornerRadius="5"
-                                       Margin="5">
-                                    <StackLayout Padding="10">
-                                        <Label Text="{Binding Nome}"
-                                               FontAttributes="Bold"
-                                               FontSize="Medium"/>
-                                        <Label Text="{Binding Altura, StringFormat='Altura: {0}'}"/>
-                                        <Label Text="{Binding Genero, StringFormat='Genero: {0}'}"/>
-                                    </StackLayout>
-                                </Frame>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-                </StackLayout>
-            </Frame>
+    <ScrollView>
+    <VerticalStackLayout Margin="20" Spacing="20">
+
+       
+        <Label Text="Lista de Pessoas"
+               FontSize="Large"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="White"
+               Margin="0,0,0,20"/>
+
+       
+        <Frame BackgroundColor="White"
+               BorderColor="Red"
+               CornerRadius="15"
+               Padding="10"
+               HasShadow="True">
+
+            <CollectionView x:Name="humanoslist"
+                            VerticalOptions="FillAndExpand">
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BackgroundColor="#F8F8F8"
+                               BorderColor="Black"
+                               CornerRadius="10"
+                               Margin="5,8"
+                               HasShadow="True">
+
+                            
+                            <HorizontalStackLayout Padding="15" Spacing="15">
+
+
+                                    <Frame WidthRequest="80"
+                                       HeightRequest="80"
+                                       CornerRadius="40"
+                                       Padding="0"
+                                       IsClippedToBounds="True"
+                                       BackgroundColor="LightGray"
+                                       HasShadow="False">
+
+                                        <Image Source="{Binding Foto}"
+                                           Aspect="AspectFill"/>
+                                    </Frame>
+                                    <VerticalStackLayout Spacing="6"
+                                                     VerticalOptions="Center">
+
+                                    <Label Text="{Binding Nome}"
+                                           FontSize="Medium"
+                                           FontAttributes="Bold"
+                                           TextColor="#333333"/>
+
+                                    <Label Text="{Binding Altura, StringFormat='Altura: {0} cm'}"
+                                           FontSize="Small"
+                                           TextColor="#666666"/>
+
+                                    <Label Text="{Binding Genero, StringFormat='Gênero: {0}'}"
+                                           FontSize="Small"
+                                           TextColor="#666666"/>
+
+                                </VerticalStackLayout>
+
+                            </HorizontalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+               
+                <CollectionView.EmptyView>
+                    <VerticalStackLayout HorizontalOptions="Center"
+                                         VerticalOptions="Center"
+                                         Margin="20">
+                        <Label Text="Nenhuma pessoa cadastrada ainda."
+                               FontSize="Medium"
+                               TextColor="Gray"/>
+                        <Label Text="Adicione novas pessoas para vê-las aqui."
+                               FontSize="Small"
+                               TextColor="DarkGray"/>
+                    </VerticalStackLayout>
+                </CollectionView.EmptyView>
+
+            </CollectionView>
+        </Frame>
+
     </VerticalStackLayout>
-        
-    
     </ScrollView>
 </ContentPage>
