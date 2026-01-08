@@ -33,17 +33,16 @@
             </StackLayout>
 
 
-             <StackLayout>
-                 <Label Text="Gênero"/>
-                 <Entry x:Name="generoEntry" PlaceholderColor="White"
+                    <StackLayout>
+                        <Label Text="Gênero"/>
+                        <Entry x:Name="generoEntry" PlaceholderColor="White"
                         Placeholder="Digite seu gênero aqui"/>
-                </StackLayout>
-                <StackLayout>
-                    <Image x:Name="fotoPatch" Source="dotnet_bot.png"></Image>
-                </StackLayout>
-                <StackLayout>
-                    <Button Text="Capturar Foto"></Button>
-                </StackLayout>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Foto"/>
+                        <Entry x:Name="fotoEntry" PlaceholderColor="White"
+Placeholder="Digite seu gênero aqui"/>
+                    </StackLayout>
 
                 <StackLayout>
                         <Button Clicked="SalvaClicked" Text="Registrar Humano"></Button>

@@ -21,6 +21,7 @@ public partial class NovoHumano : ContentPage
             humano.Peso = Convert.ToDecimal(pesoEntry.Text);
             humano.Altura = Convert.ToDecimal(alturaEntry.Text);
             humano.Genero = generoEntry.Text;
+            humano.Foto = fotoEntry.Text;
             var resposta = humano.insertMongo(humano);
             DisplayAlertAsync("Resultado", resposta, "OK"); 
         }

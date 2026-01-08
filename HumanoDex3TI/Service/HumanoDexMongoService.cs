@@ -46,7 +46,7 @@ namespace HumanoDex3TI.Service
         {
             try
             {
-                var filter = Builders<Humano>.Filter.Empty;
+                    var filter = Builders<Humano>.Filter.Empty;
                 var humano = await _collection.Find(filter).ToListAsync();
                 return new ObservableCollection<Humano>(humano);
             }
